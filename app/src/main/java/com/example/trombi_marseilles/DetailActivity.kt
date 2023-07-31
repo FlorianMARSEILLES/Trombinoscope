@@ -31,7 +31,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var textViewLongitude: TextView
     private lateinit var textViewOffset: TextView
     private lateinit var textViewDescription: TextView
-    // autres vues
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,8 +61,6 @@ class DetailActivity : AppCompatActivity() {
         textViewOffset = findViewById(R.id.textViewOffset)
         textViewDescription = findViewById(R.id.textViewDescription)
 
-        // initialisation d'autres vues
-
         val userPhotoUrl = intent.getStringExtra("user_photo")
         val userFirstName = intent.getStringExtra("user_firstname")
         val userLastName = intent.getStringExtra("user_lastname")
@@ -85,7 +83,6 @@ class DetailActivity : AppCompatActivity() {
         val userOffset = intent.getStringExtra("user_offset")
         val userDescription = intent.getStringExtra("user_description")
 
-        // Charger l'image de l'URL avec Picasso
         Picasso.get().load(userPhotoUrl).into(imageViewPhoto)
 
         textViewFirstName.text = userFirstName
@@ -108,7 +105,7 @@ class DetailActivity : AppCompatActivity() {
         textViewLongitude.text = userLongitude
         textViewOffset.text = userOffset
         textViewDescription.text = userDescription
-        // autres détails
+
         val buttonBack: Button = findViewById(R.id.buttonBack)
         buttonBack.setOnClickListener {
             // Action à effectuer lorsque le bouton de retour est cliqué

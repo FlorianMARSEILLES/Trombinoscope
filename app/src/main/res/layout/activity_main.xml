@@ -49,12 +49,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/list"
         app:layout_constraintVertical_bias="0.313"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        tools:ignore="TextViewEdits" />
 
     <Button
         android:id="@+id/buttonRemoveProfiles"
         android:layout_width="220dp"
-        android:layout_height="37dp"
+        android:layout_height="48dp"
         android:layout_marginTop="3dp"
         android:background="@drawable/drawable_titlebackground2"
         android:text="@string/remove_3_profiles"

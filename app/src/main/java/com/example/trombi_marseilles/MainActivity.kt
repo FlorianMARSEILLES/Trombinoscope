@@ -3,6 +3,7 @@ package com.example.trombi_marseilles
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -63,28 +64,28 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
 
         adapter = Adapter(items, this)
         recyclerView.adapter = adapter
-        // Dans la fonction onCreate()
         val buttonRemoveProfiles = findViewById<Button>(R.id.buttonRemoveProfiles)
-        // Récupérer la référence au bouton "Load More" en utilisant findViewById
         val buttonLoadMore = findViewById<Button>(R.id.buttonLoadMore)
 
-        // Ajouter le gestionnaire d'événements pour le bouton "Load More"
         buttonLoadMore.setOnClickListener {
             buttonAnimation(buttonLoadMore)
-            // Appel de la fonction loadMore pour charger plus d'éléments
             loadMoreClickCount++
             updateButtonVisibility()
             loadMoreProfiles()
         }
+
         buttonRemoveProfiles.setOnClickListener {
             buttonAnimation(buttonRemoveProfiles)
             removeProfiles()
+            loadMoreClickCount--
+            updateButtonVisibility()
 
         }
 
         // Charger les premiers profils depuis l'API
         loadProfilesFromApi(initialVisibleProfiles)
     }
+    @SuppressLint("NotifyDataSetChanged")
     private fun removeProfiles() {
         if (items.size >= 3) {
             for (i in 1..3) {
@@ -104,6 +105,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
         animatorSet.interpolator = AccelerateDecelerateInterpolator()
         animatorSet.start()
     }
+    @SuppressLint("NotifyDataSetChanged")
     private fun loadProfilesFromApi(profilesToLoad: Int) {
         val queue = Volley.newRequestQueue(this)
         val url = "https://randomuser.me/api/?results=$profilesToLoad"
@@ -173,6 +175,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun loadMoreProfiles() {
         val queue = Volley.newRequestQueue(this)
         val url = "https://randomuser.me/api/?results=$profilesToLoad"
