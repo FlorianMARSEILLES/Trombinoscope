@@ -16,7 +16,7 @@ Kotlin
 
 Installation
 
-Clonez le dépôt : git clone https://github.com/votreutilisateur/application-trombinoscope.git
+Clonez le dépôt : git clone https://github.com/FlorianMARSEILLES/Trombinoscope
 Ouvrez le projet dans Android Studio.
 Compilez et exécutez l'application sur un émulateur ou un appareil physique.
 
