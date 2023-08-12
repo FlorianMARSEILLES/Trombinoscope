@@ -108,8 +108,7 @@ class DetailActivity : AppCompatActivity() {
 
         val buttonBack: Button = findViewById(R.id.buttonBack)
         buttonBack.setOnClickListener {
-            // Action à effectuer lorsque le bouton de retour est cliqué
-            onBackPressed() // Appelle la méthode onBackPressed pour revenir en arrière
+            onBackPressed()
         }
     }
 }
