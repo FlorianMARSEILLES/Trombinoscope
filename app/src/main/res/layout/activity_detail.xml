@@ -8,22 +8,16 @@
     android:background="#A376CB"
     android:padding="16dp">
 
-
-    <!-- Rectangle supérieur -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/roundedbackground">
-
-        <!-- Copie des éléments du rectangle supérieur -->
-
 
         <ImageView
             android:id="@+id/imageViewPhoto"
             android:layout_width="86dp"
             android:layout_height="123dp"
             android:layout_marginStart="16dp"
-            android:contentDescription="@string/photo_du_user2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -44,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Title"
+            android:text="@string/title"
 
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textView13"
@@ -56,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="First Name"
+            android:text="@string/first_name"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintTop_toTopOf="@+id/textView10"
@@ -67,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="Titre :"
+            android:text="@string/titre"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageViewPhoto"
@@ -79,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Last Name"
+            android:text="@string/last_name"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textView11"
             app:layout_constraintTop_toTopOf="@+id/textView11"
@@ -91,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
-            android:text="Nom :"
+            android:text="@string/nom2"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageViewPhoto"
@@ -104,20 +98,20 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
-            android:text="Pr. :"
+            android:text="@string/pr_nom2"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageViewPhoto"
             app:layout_constraintTop_toBottomOf="@+id/textView13"
             tools:ignore="MissingConstraints,NotSibling" />
 
-        <!-- Autres vues de détails nécessaires à cette première partie -->
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="16dp" />
-    <!-- Rectangle inférieur -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -129,14 +123,12 @@
         android:padding="16dp"
         android:background="@drawable/roundedbackground">
 
-        <!-- Copie des éléments du rectangle inférieur -->
-
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Nat. :"
+            android:text="@string/nat"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Date of Birth"
+            android:text="@string/date_de_naissance"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/naissance"
             app:layout_constraintTop_toTopOf="@+id/naissance" />
@@ -158,7 +150,7 @@
             android:layout_width="301dp"
             android:layout_height="0dp"
             android:layout_marginStart="10dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/contact"
             app:layout_constraintTop_toTopOf="@+id/contact" />
@@ -168,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Cell"
+            android:text="@string/cell"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/textViewEmail"
             app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
@@ -178,7 +170,7 @@
             android:layout_width="76dp"
             android:layout_height="27dp"
             android:layout_marginTop="8dp"
-            android:text="Né(e) le :"
+            android:text="@string/n_e_le"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -190,7 +182,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Habite au :"
+            android:text="@string/adresse"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -201,7 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Contact :"
+            android:text="@string/contact"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/habitat"
@@ -212,7 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="address"
+            android:text="@string/adresse2"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textViewNumber"
             app:layout_constraintTop_toTopOf="@+id/textViewNumber" />
@@ -222,7 +214,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Number"
+            android:text="@string/num_ro"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/habitat"
             app:layout_constraintTop_toTopOf="@+id/habitat" />
@@ -232,7 +224,7 @@
             android:layout_width="59dp"
             android:layout_height="29dp"
             android:layout_marginTop="8dp"
-            android:text="State"
+            android:text="@string/etait"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/textViewNumber"
             app:layout_constraintTop_toBottomOf="@+id/textViewPostcode" />
@@ -242,7 +234,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Country"
+            android:text="@string/pays"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textViewState"
             app:layout_constraintTop_toTopOf="@+id/textViewState" />
@@ -252,7 +244,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Postcode"
+            android:text="@string/code_postal"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textViewCity"
             app:layout_constraintTop_toTopOf="@+id/textViewCity" />
@@ -262,7 +254,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="City"
+            android:text="@string/ville"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/textViewNumber"
             app:layout_constraintTop_toBottomOf="@+id/textViewNumber" />
@@ -272,7 +264,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Username"
+            android:text="@string/username"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/Identifiant"
             app:layout_constraintTop_toTopOf="@+id/Identifiant" />
@@ -282,7 +274,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Password"
+            android:text="@string/mdp"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/password"
             app:layout_constraintTop_toTopOf="@+id/password" />
@@ -292,7 +284,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Nationality"
+            android:text="@string/nationalit"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textView12"
             app:layout_constraintTop_toTopOf="@+id/textView12" />
@@ -302,7 +294,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Identifiant :"
+            android:text="@string/identifiant"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/contact"
@@ -313,7 +305,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Mot de passe :"
+            android:text="@string/mot_de_passe"
             android:textStyle="bold"
             android:textSize="20sp"
 
@@ -335,7 +327,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Age :"
+            android:text="@string/age6"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/naissance"
@@ -346,7 +338,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Coordonnées :"
+            android:text="@string/coordonn_es"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/password"
@@ -357,7 +349,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Lat. :"
+            android:text="@string/lat"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/coord"
@@ -368,7 +360,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Long. :"
+            android:text="@string/longe"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/lat"
@@ -379,7 +371,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Fus. hor. :"
+            android:text="@string/fus_hor"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/coord"
@@ -431,7 +423,7 @@
             android:layout_width="323dp"
             android:layout_height="38dp"
             android:layout_marginTop="4dp"
-            android:text="Informations Complémentaires"
+            android:text="@string/informations_compl_mentaires"
             android:textSize="22.5sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -447,8 +439,6 @@
 
 
 
-        <!-- Autres vues de détails nécessaires à cette deuxième partie -->
-
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
@@ -460,7 +450,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="#FFFFFF"
         android:padding="8dp"
-        android:text="Retour en arrière"
+        android:text="@string/retour_en_arri_re"
         android:textColor="#000000"
         android:textSize="18sp" />
 

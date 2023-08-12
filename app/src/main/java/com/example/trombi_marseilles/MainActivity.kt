@@ -1,8 +1,9 @@
 package com.example.trombi_marseilles
 
-import android.animation.AnimatorInflater
+
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,16 +13,14 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity(), OnItemClickListener {
 
-    // Définir les constantes pour le nombre initial de profils et le nombre de profils supplémentaires à charger
+
     private val initialVisibleProfiles = 3
     private val profilesToLoad = 3
     private var loadMoreClickCount = 0
@@ -63,28 +62,27 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
 
         adapter = Adapter(items, this)
         recyclerView.adapter = adapter
-        // Dans la fonction onCreate()
         val buttonRemoveProfiles = findViewById<Button>(R.id.buttonRemoveProfiles)
-        // Récupérer la référence au bouton "Load More" en utilisant findViewById
         val buttonLoadMore = findViewById<Button>(R.id.buttonLoadMore)
 
-        // Ajouter le gestionnaire d'événements pour le bouton "Load More"
         buttonLoadMore.setOnClickListener {
             buttonAnimation(buttonLoadMore)
-            // Appel de la fonction loadMore pour charger plus d'éléments
             loadMoreClickCount++
             updateButtonVisibility()
             loadMoreProfiles()
         }
+
         buttonRemoveProfiles.setOnClickListener {
             buttonAnimation(buttonRemoveProfiles)
             removeProfiles()
+            loadMoreClickCount--
+            updateButtonVisibility()
 
         }
 
-        // Charger les premiers profils depuis l'API
         loadProfilesFromApi(initialVisibleProfiles)
     }
+    @SuppressLint("NotifyDataSetChanged")
     private fun removeProfiles() {
         if (items.size >= 3) {
             for (i in 1..3) {
@@ -104,6 +102,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
         animatorSet.interpolator = AccelerateDecelerateInterpolator()
         animatorSet.start()
     }
+    @SuppressLint("NotifyDataSetChanged")
     private fun loadProfilesFromApi(profilesToLoad: Int) {
         val queue = Volley.newRequestQueue(this)
         val url = "https://randomuser.me/api/?results=$profilesToLoad"
@@ -125,10 +124,10 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
                     val password = personData.login.password ?: "Unknown Password"
                     val cell = personData.cell ?: "Unknown Cell"
                     val email = personData.email ?: "Unknown Email"
-                    val latitude = personData.location.coordinates?.latitude ?: "Unknown Latitude"
-                    val longitude = personData.location.coordinates?.longitude ?: "Unknown Longitude"
-                    val offset = personData.location.timezone?.offset ?: "Unknown Offset"
-                    val description = personData.location.timezone?.description ?: "Unknown Description"
+                    val latitude = personData.location.coordinates.latitude ?: "Unknown Latitude"
+                    val longitude = personData.location.coordinates.longitude ?: "Unknown Longitude"
+                    val offset = personData.location.timezone.offset ?: "Unknown Offset"
+                    val description = personData.location.timezone.description ?: "Unknown Description"
 
                     val person = Person(
                         personData.name.first,
@@ -173,6 +172,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun loadMoreProfiles() {
         val queue = Volley.newRequestQueue(this)
         val url = "https://randomuser.me/api/?results=$profilesToLoad"
@@ -194,10 +194,10 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
                     val password = personData.login.password ?: "Unknown Password"
                     val cell = personData.cell ?: "Unknown Cell"
                     val email = personData.email ?: "Unknown Email"
-                    val latitude = personData.location.coordinates?.latitude ?: "Unknown Latitude"
-                    val longitude = personData.location.coordinates?.longitude ?: "Unknown Longitude"
-                    val offset = personData.location.timezone?.offset ?: "Unknown Offset"
-                    val description = personData.location.timezone?.description ?: "Unknown Description"
+                    val latitude = personData.location.coordinates.latitude ?: "Unknown Latitude"
+                    val longitude = personData.location.coordinates.longitude ?: "Unknown Longitude"
+                    val offset = personData.location.timezone.offset ?: "Unknown Offset"
+                    val description = personData.location.timezone.description ?: "Unknown Description"
 
                     val person = Person(
                         personData.name.first,
@@ -282,7 +282,15 @@ data class PersonData(
     val nat: String,
     val timezone:TimezoneData
 )
+data class StreetData(
+    val number: String,
+    val name: String
+)
 
+data class CoordinatesData(
+    val latitude: String,
+    val longitude: String
+)
 data class NameData(
     val title: String,
     val first: String,
@@ -298,16 +306,18 @@ data class LocationData(
     val coordinates: CoordinatesData,
     val timezone: TimezoneData
 )
-
-data class StreetData(
-    val number: String,
-    val name: String
+data class IdData(
+    val name: String,
+    val value: String
 )
 
-data class CoordinatesData(
-    val latitude: String,
-    val longitude: String
+data class PictureData(
+    val large: String,
+    val medium: String,
+    val thumbnail: String
 )
+
+
 
 data class TimezoneData(
     val offset: String,
@@ -334,13 +344,3 @@ data class RegisteredData(
     val age: Int
 )
 
-data class IdData(
-    val name: String,
-    val value: String
-)
-
-data class PictureData(
-    val large: String,
-    val medium: String,
-    val thumbnail: String
-)

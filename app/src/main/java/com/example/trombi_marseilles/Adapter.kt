@@ -29,7 +29,6 @@ class Adapter(private val items: List<MainActivity.Person>, private val listener
         holder.firstNameTextView.text = item.firstName
         holder.lastNameTextView.text = item.lastName
 
-        // Utilisez Picasso pour charger l'image à partir de l'URL
         Picasso.get().load(item.photoUrl).into(holder.photoImageView)
     }
 
