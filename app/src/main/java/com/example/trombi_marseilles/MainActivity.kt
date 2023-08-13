@@ -1,6 +1,5 @@
 package com.example.trombi_marseilles
 
-
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
@@ -62,6 +61,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
 
         adapter = Adapter(items, this)
         recyclerView.adapter = adapter
+
         val buttonRemoveProfiles = findViewById<Button>(R.id.buttonRemoveProfiles)
         val buttonLoadMore = findViewById<Button>(R.id.buttonLoadMore)
 
@@ -95,7 +95,6 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
     private fun buttonAnimation(button: Button){
         val scaleX = ObjectAnimator.ofFloat(button, "scaleX", 1.0f, 0.8f, 1.0f)
         val scaleY = ObjectAnimator.ofFloat(button, "scaleY", 1.0f, 0.8f, 1.0f)
-
         val animatorSet = AnimatorSet()
         animatorSet.play(scaleX).with(scaleY)
         animatorSet.duration = 200

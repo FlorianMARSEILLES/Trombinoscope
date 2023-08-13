@@ -6,7 +6,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
-import android.view.View;
 import android.widget.Button;
 
 class DetailActivity : AppCompatActivity() {
@@ -42,7 +41,6 @@ class DetailActivity : AppCompatActivity() {
         textViewTitle = findViewById(R.id.textViewTitle)
         textViewFirstName = findViewById(R.id.textViewFirstName)
         textViewLastName = findViewById(R.id.textViewLastName)
-        textViewTitle = findViewById(R.id.textViewTitle)
         textViewEmail = findViewById(R.id.textViewEmail)
         textViewCell = findViewById(R.id.textViewCell)
         textViewCity = findViewById(R.id.textViewCity)
