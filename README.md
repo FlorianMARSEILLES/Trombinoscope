@@ -1,5 +1,7 @@
 # Trombinoscope
-Application Trombinoscope L'Application Trombinoscope est une application mobile développée en Kotlin qui permet aux utilisateurs de consulter une liste de profils. Elle offre une interface conviviale pour afficher les profils et visualiser des informations détaillées sur chaque profil.
+Application Trombinoscope
+
+L'Application Trombinoscope est une application mobile développée en Kotlin qui permet aux utilisateurs de consulter une liste de profils. Elle offre une interface conviviale pour afficher les profils et visualiser des informations détaillées sur chaque profil.
 
 Fonctionnalités Afficher un nombre prédéfini de profils au lancement de l'application. Charger davantage de profils avec le bouton "Charger plus". Afficher moins de profils avec le bouton "Afficher moins" (un minimum de profils reste affiché). Visualiser des informations détaillées sur un profil sélectionné dans une page distincte.
 
